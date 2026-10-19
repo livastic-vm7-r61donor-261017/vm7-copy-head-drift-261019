@@ -1,0 +1,12 @@
+pull_request_rules:
+  - name: vm7 approved-head copy gate
+    conditions:
+      - base = main
+      - -closed
+      - "#approved-reviews-by >= 1"
+    actions:
+      copy:
+        branches:
+          - release
+        report_mode:
+          - check
